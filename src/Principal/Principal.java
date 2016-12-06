@@ -7,9 +7,19 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
 
+/**
+ * Clase principal
+ * @author bmtadeo
+ *
+ */
 public class Principal{
+	
 	static Scanner entrada = new Scanner(System.in);
-
+	
+	/**
+	 * Metodo principal
+	 * @param args
+	 */
 	public static void main(String[] args) {
 		System.out.println("Bienvenido al servicio de mensajeria Telegram");
 		System.out.println("---------------------------------------------");
@@ -34,6 +44,11 @@ public class Principal{
 		entrada.close();
 		System.exit(0);
 	}
+	/**
+	 * Metodo para 'enviar ' y codificar el mensaje
+	 * @param s1
+	 * @return mensajeCodificado
+	 */
 	public static String enviarMensajeYCodificar(String s1){
 		StringBuilder sb= new StringBuilder();
 		char[] mensaje= s1.toUpperCase().toCharArray();
@@ -163,6 +178,11 @@ public class Principal{
 		return mensajeCodificado;
 		
 	}
+	/**
+	 * Metodo para 'recibir' y decodificar el mensaje
+	 * @param s1
+	 * @return mensajeDecodificado
+	 */
 	public static String recibirMensajeYDecodificar(String s1){
 		StringBuilder sb= new StringBuilder();
 		char[] mensaje= s1.toUpperCase().toCharArray();
@@ -292,6 +312,11 @@ public class Principal{
 		return mensajedecodificado;
 		
 	}
+	/**
+	 * Metodo par escribir el mensaje codificado y decodidificado en el texto
+	 * @param s1
+	 * @param s2
+	 */
 	public static void escribirMensajeEncriptadoYDesencriptado(String s1, String s2){
 		String ruta= "/Users/bmtadeo/Documents/Universidad/Proyectos Programacion/Codificacion/mensajes.txt";
 		File archivo = new File(ruta);

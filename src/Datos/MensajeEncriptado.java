@@ -1,5 +1,9 @@
 package Datos;
-
+/**
+ * Clase de mensaje encriptado
+ * @author bmtadeo
+ *
+ */
 public class MensajeEncriptado {
 	
 	private String clave;

@@ -1,6 +1,11 @@
 package Datos;
-
+/**
+ * Clase que contiene los parametros de las letras
+ * @author bmtadeo
+ *
+ */
 public class CodigosLetrasYNumeros {
+	
 	/**
 	 * Codigos de las letras de la A a la Z
 	 */
