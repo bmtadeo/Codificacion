@@ -24,7 +24,7 @@ public class Principal{
 		System.out.println("Bienvenido al servicio de mensajeria Telegram");
 		System.out.println("---------------------------------------------");
 		System.out.println("Usuario1, envie un mensaje al Usuario2: ");
-		String mensajeusuario=entrada.next();
+		String mensajeusuario=entrada.nextLine();
 		MensajeUsuario mensajeUsuario= new MensajeUsuario(mensajeusuario);
 		
 		String mensajeencriptado=enviarMensajeYCodificar(mensajeUsuario.getCadena());
@@ -136,9 +136,6 @@ public class Principal{
 			case 'Z':
 				sb.append(CodigosLetrasYNumeros.Z);
 				break;
-			case ' ':
-				sb.append(CodigosLetrasYNumeros.ESPACIO);
-				break;
 			case '0':
 				sb.append(CodigosLetrasYNumeros.NUMERO0);
 				break;
@@ -169,6 +166,9 @@ public class Principal{
 			case '9':
 				sb.append(CodigosLetrasYNumeros.NUMERO9);
 				break;
+			}
+			if(Character.isSpaceChar(i)){
+				sb.append(CodigosLetrasYNumeros.ESPACIO);
 			}
 			i++;
 			
@@ -270,9 +270,6 @@ public class Principal{
 			case CodigosLetrasYNumeros.Z:
 				sb.append('Z');
 				break;
-			case CodigosLetrasYNumeros.ESPACIO:
-				sb.append(' ');
-				break;
 		    case CodigosLetrasYNumeros.NUMERO0:
 		    	sb.append('0');
 		    	break;
@@ -285,8 +282,8 @@ public class Principal{
 		    case CodigosLetrasYNumeros.NUMERO3:
 			    sb.append('3');
 			    break;
-		    case '4':
-			    sb.append(CodigosLetrasYNumeros.NUMERO4);
+		    case CodigosLetrasYNumeros.NUMERO4:
+			     sb.append('4');
 			     break;
 		    case CodigosLetrasYNumeros.NUMERO5:
 			    sb.append('5');
@@ -294,8 +291,8 @@ public class Principal{
 		    case CodigosLetrasYNumeros.NUMERO6:
 			    sb.append('6');
 			    break;
-		    case '7':
-			    sb.append(CodigosLetrasYNumeros.NUMERO7);
+		    case CodigosLetrasYNumeros.NUMERO7:
+			    sb.append('7');
 			    break;
 	     	case CodigosLetrasYNumeros.NUMERO8:
 			    sb.append('8');
@@ -303,9 +300,10 @@ public class Principal{
 		    case CodigosLetrasYNumeros.NUMERO9:
 			    sb.append('9');
 			    break;
+		    case CodigosLetrasYNumeros.ESPACIO:
+		    	sb.append(CodigosLetrasYNumeros.ESPACIO);
 			}
 			i++;
-			
 		}
 		String mensajedecodificado= sb.toString();
 		
@@ -318,7 +316,7 @@ public class Principal{
 	 * @param s2
 	 */
 	public static void escribirMensajeEncriptadoYDesencriptado(String s1, String s2){
-		String ruta= "/Users/bmtadeo/Documents/Universidad/Proyectos Programacion/Codificacion/mensajes.txt";
+		String ruta= "/Users/bmtadeo/GitHub/Codificacion/mensajes.txt";
 		File archivo = new File(ruta);
 		BufferedWriter bw = null;
 		if(archivo.exists()) {
