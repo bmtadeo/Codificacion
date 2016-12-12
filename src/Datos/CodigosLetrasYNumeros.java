@@ -38,7 +38,7 @@ public class CodigosLetrasYNumeros {
 	public static final char Z=')';
 	
 	/**
-	 * Codido para el espacio
+	 * Codigo para el espacio
 	 */
 	public static final char ESPACIO = 'J';
 	/**

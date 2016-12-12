@@ -166,18 +166,23 @@ public class Principal{
 			case '9':
 				sb.append(CodigosLetrasYNumeros.NUMERO9);
 				break;
-			}
-			if(Character.isSpaceChar(i)){
+			default:
 				sb.append(CodigosLetrasYNumeros.ESPACIO);
+				break;
+
+				
 			}
+			
+		
 			i++;
 			
-		}
+	}
 		String mensajeCodificado= sb.toString();
 	
 		return mensajeCodificado;
 		
 	}
+
 	/**
 	 * Metodo para 'recibir' y decodificar el mensaje
 	 * @param s1
@@ -300,9 +305,14 @@ public class Principal{
 		    case CodigosLetrasYNumeros.NUMERO9:
 			    sb.append('9');
 			    break;
-		    case CodigosLetrasYNumeros.ESPACIO:
-		    	sb.append(CodigosLetrasYNumeros.ESPACIO);
+		    default:
+				sb.append(' ');
+				break;
 			}
+			/*if(Character.isDefined((Character)CodigosLetrasYNumeros.ESPACIO)){
+				sb.append(' ');
+			}
+			*/
 			i++;
 		}
 		String mensajedecodificado= sb.toString();
